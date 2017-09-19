@@ -1,0 +1,34 @@
+{% extends 'rutinas/base.html' %}
+
+{% block content %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>😍 Awww yeah!</strong> Primer Club Deportivo con rutinas en linea!
+</div>
+
+<div class="jumbotron">
+
+<h1 class="text-center">Escoge a tu Instructor favorito</h1>
+
+</div>
+    <div class="container text-center">
+
+
+{% for instructor in instructor_list %}
+
+    <figure class=" figure ">
+
+
+       <a href="{% url 'sexo_list'  pk=instructor.pk %}"> <image class="img-thumbnail " src="{{ instructor.foto.url }}"></a></image>
+                <div class="container">
+                    <h6 class="text-center">{{ instructor.nombre }} {{ instructor.apellido }}</h6>
+
+                </div>
+    </figure>
+    {% endfor %}
+    </div>
+
+{% endblock %}

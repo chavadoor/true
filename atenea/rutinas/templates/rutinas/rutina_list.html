@@ -1,0 +1,40 @@
+{% extends 'rutinas/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+
+<h1 class="text-center">Escoge tu rutina</h1>
+
+</div>
+
+<div class="comtainer">
+    <table class="table table-hover">
+
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Sexo</th>
+    </tr>
+  </thead>
+    <tbody>
+    {% for rutina in rutina_list %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>  <a href="{{  rutina.rutina.url }}"> {{ rutina.nombre }} </a> </td>
+      <td>{{ rutina.sexo }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+
+
+    </table>
+
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'rutinas/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+
+<h1 class="text-center">Escoge a tu genero</h1>
+
+</div>
+
+
+{% for tipo in datas %}
+
+        <a href="{% url 'rutina_list' pk=pk pk1=pk1 pk2=tipo.pk %}" class="btn btn-secondary btn-lg btn-block" role="button" >
+            {{ tipo }}
+        </a>
+
+
+{% endfor %}
+
+{% endblock %}
